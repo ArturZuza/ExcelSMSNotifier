@@ -2,9 +2,9 @@ import pandas as pd
 from twilio.rest import Client
 
 # meu SID
-account_sid = "AC6e2dce106df3fe3cbb8efdbaf0c1fd11"
+account_sid = "sid aqui"
 # meu token
-auth_token = "2a4eee7ead89ad02b0a9a6029ffc8d25"
+auth_token = "token aqui"
 client = Client(account_sid, auth_token)
 
 # abrir o arquivo
