@@ -10,6 +10,7 @@ client = Client(account_sid, auth_token)
 # abrir o arquivo
 # ver se algum aluno (1 a 20) tirou menos menos que 5 no resultado final (coluna S)
 # se for menor do que 5 -> envia um SMS com o nome e a nota do aluno
+
 lista_notas = ['notas']
 for notas in lista_notas:
     tabela_notas = pd.read_excel(f'{notas}.xlsx')
@@ -18,7 +19,8 @@ for notas in lista_notas:
         nota = tabela_notas.loc[tabela_notas['RESULTADO FINAL'] < 5, 'RESULTADO FINAL'].values[0]
         print(f'alguem ficou com nota abaixo da media. Aluno: {aluno}, Nota: {nota}')
         message = client.messages.create(
-            to="+5584991294012",
-            from_="+16509841547",
+            #check Twilio API Documentation to better details and tutorials
+            to="insira aqui o numero que vai receber a mensagem",
+            from_="+insira o numero que enviara a mensagem",
             body=f'alguem ficou com nota abaixo da media. Aluno: {aluno}, Nota: {nota}')
         print(message.sid)
